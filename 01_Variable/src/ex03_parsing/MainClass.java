@@ -23,6 +23,7 @@ public class MainClass {
 		double eye = Double.parseDouble(strEye);
 		System.out.println(eye);
 		
+		
 	}
 
 }

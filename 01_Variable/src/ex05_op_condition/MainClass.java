@@ -80,6 +80,7 @@ public class MainClass {
 		boolean result2 = (score / 10) == 7;
 		System.out.println(result2);
 		
+		
 	}
 
 	public static void ex05() {
