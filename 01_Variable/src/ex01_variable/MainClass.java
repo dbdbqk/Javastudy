@@ -73,6 +73,7 @@ public class MainClass {
 		String name = "유재현"; // Java에서 기본 타입과 같은 사용법을 제공
 		System.out.println(name);
 		String country = new String("Korea"); // 대부분의 참조 타입 사용법
+		System.out.println(country);
 		
 		// 상수 선언하기(final 키워드가 필요)
 		final double PI = 3.141592;
