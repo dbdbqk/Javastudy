@@ -10,9 +10,20 @@ public class CoffeeMachine {
 	// 메소드
 	CoffeeAndChange buyCoffee(int money, int choice){
 		
-		String coffee = menu[choice - 1];
+		// 돈이 모자르면 money 그대로 반환	
+		
 		int price = prices[choice - 1];
-
+		
+		if(money < price) {
+			CoffeeAndChange cnc = new CoffeeAndChange();
+			cnc.change = money;
+					return cnc;
+		}
+		
+		String coffee = menu[choice - 1];
+		
+		
+		
 		moneyPot += price;
 		
 		CoffeeAndChange cnc = new CoffeeAndChange();
