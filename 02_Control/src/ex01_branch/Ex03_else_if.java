@@ -98,7 +98,7 @@ public class Ex03_else_if {
 	 int day = 6;
 	 int nDay = 10; // 10일 후
 	 
-	 day += nDay; //day = day + nDay;\d		 
+	 day += nDay; //day = day + nDay		 
 	
 	 String weekName; // 월요일
 	 

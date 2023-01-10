@@ -72,13 +72,13 @@ public class Ex01_array {
 		
 	}
 	
-	public static void ex04() {
+	public static void ex04() { // 이건 꼭 알고 넘어가기
 		
 		// 배열 선언 + 생성
 		int[] arr = new int[5];
 		
 		// 배열 순회 -> 배열 순회에 기본 베이스, 특별한 사유 없으면 해당 코드 조합으로 사용
-		for(int i = 0; i < arr.length; i++) {
+		for(int i = 0; i < arr.length; i++) { //이 방법으로 배열 순회 arr.length
 			System.out.println(arr[i]);
 		}
 		
@@ -153,7 +153,7 @@ public class Ex01_array {
 		
 	}
 	
-	public static void ex07() {
+	public static void ex07() { // 이것도 알아두기
 		
 		// 배열 초기화
 		int[] arr = {10, 20, 30};
@@ -165,7 +165,7 @@ public class Ex01_array {
 		
 	}
 	
-	public static void ex08() { // 연습
+	public static void ex08() { // 연습  - > 아직은 공부 안하고 넘어가도 괜찮음.
 		
 		String[] weekName = {"토", "일", "월", "화", "수", "목", "금"};
 		
@@ -176,7 +176,7 @@ public class Ex01_array {
 		
 	}
 	
-	public static void ex09() { // 연습
+	public static void ex09() { // 연습 아직은 공부 안하고 넘어가도 괜찮음
 		
 		String[] season = {"겨울", "봄", "여름", "가을"};
 		

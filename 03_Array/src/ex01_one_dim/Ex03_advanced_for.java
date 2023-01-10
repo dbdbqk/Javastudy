@@ -2,7 +2,7 @@ package ex01_one_dim;
 
 public class Ex03_advanced_for {
 
-	public static void ex01() {
+	public static void ex01() { // 향상 for문 참조에서만 사용 가능
 		
 		int[] scores = {50, 90, 60, 100, 80};
 		
