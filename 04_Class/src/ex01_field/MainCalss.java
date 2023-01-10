@@ -43,19 +43,21 @@ public class MainCalss {
 		// 객체 선언 + 생성
 		User user2 = new User();
 		
-		// 주소 객체 선언 + 생성
-		user2.addr = new Address(); 
-		
+
 		// 필드 값 저장
 		user2.id = "master";
 		user2.pw = "654321";
 		user2.point = 1000;
 		user2.isVip = true;
+
+		
+		// user2 객체의 addr 필드 생성
+		user2.addr = new Address(); 
+
 		user2.addr.postcoad = "54321";
 		user2.addr.roadAddress = "디지털로";
 		user2.addr.jibunAddress = "철산동";
 		
-
 		// 확인
 		System.out.println("아이디 : " + user2.id);
 		System.out.println("비밀번호 : " + user2.pw);
