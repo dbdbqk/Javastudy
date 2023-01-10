@@ -2,7 +2,7 @@ package ex03_method;
 
 public class MainClass {
 	
-	public static void ex01() {
+	public static void ex01() { // 계산기
 		// Calculator 객체 선언 + 생성
 		Calculator calc = new Calculator();
 		double add = calc.addition(1.5, 2.5); // addition 메소드 호출 calc.addition[(1.5,2.5)]<- 인수, argument라 부르며 인수를 저장하는 변수를 매개변수
@@ -27,7 +27,7 @@ public class MainClass {
 		
 	}
 	
-	public static void ex03() {
+	public static void ex03() { // 자동차
 		
 		Car car = new Car();
 		
