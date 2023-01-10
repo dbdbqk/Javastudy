@@ -8,7 +8,7 @@ public class MainClass {
 		
 		school.name = "철산초";
 		school.students = new Student[3]; // 학생을 3명 저장 할 수 있어요 라는 배열 생성
-	
+		
 		
 		for(int i = 0; i < school.students.length; i++) {
 			
