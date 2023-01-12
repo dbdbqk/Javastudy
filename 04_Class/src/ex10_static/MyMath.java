@@ -10,6 +10,7 @@ public class MyMath {
 		4. 클래스를 이용해서 호출하기 때문에 클래스 변수, 클래스 메소드라고 부름
 		5. static 요소는 다른 static 요소만을 참조할 수 있음(non-static 요소는 참조할 수 없음)
 	*/
+	
 	// 필드
 	public static final double PI = 3.141592;
 	
