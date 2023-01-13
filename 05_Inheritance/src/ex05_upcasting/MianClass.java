@@ -1,6 +1,6 @@
 package ex05_upcasting;
 
-public class MianClass {
+public class MianClass { // 중요함 장단점 모두 기억 하기 
 
 	/*
 		업캐스팅
