@@ -17,7 +17,7 @@ public class Watch {
 	
 	public void addHour(int addHour) {
 		int mod = addHour % 24;
-		if(addHour / 24 > 1) {
+		if(addHour / 24 >= 1) {
 			hour += mod;
 			System.out.println(addHour + "시간 후" + "(" + mod + "시간" + ")");
 			}
