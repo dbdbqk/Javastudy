@@ -107,6 +107,7 @@ public class Ex01_String {
 		for(int i = 0; i < name.length(); i++) {
 			System.out.println(name.charAt(i));
 		}
+		System.out.println(name.charAt(0));
 	}
 	
 	public static void substring() {
@@ -146,7 +147,6 @@ public class Ex01_String {
 		int idx3 = slogan.indexOf("걱정", idx2 + 1);
 		
 		int idx4 = slogan.indexOf("민경태");
-		
 		System.out.println(idx1);
 		System.out.println(idx2);
 		System.out.println(idx3);
@@ -186,6 +186,8 @@ public class Ex01_String {
 		}else {
 			System.out.println("민씨가 아니다.");
 		}
+		System.out.println(name.endsWith("태"));
+		System.out.println(name.matches("민경태"));
 		
 	}
 	
@@ -205,6 +207,8 @@ public class Ex01_String {
 			System.out.println("이메일이 아니다.");
 			
 		}
+		System.out.println(email.contains("gt"));
+		
 	}
 	
 	public static void toCase() {
@@ -255,6 +259,7 @@ public class Ex01_String {
 	
 	public static void isEmpty() {
 		
+			
 		// isEmpty
 		// 빈 문자열이면 true 반환
 		// 빈 문자열("") : 문자열의 길이가 0이면 빈 문자열
@@ -262,11 +267,11 @@ public class Ex01_String {
 		String str = " ";
 		if(str.trim().isEmpty()) {
 			System.out.println("빈 문자열이다.");
-			
 		}else {
 			System.out.println("빈 문자열이 아니다.");
 		}
-	
+		System.out.println(str.isEmpty());
+		
 		// isBlank
 		// 빈 문자열이거나 공백 문자로만 구성되었다면 true 반환
 		// JDK 11 이후에서만 사용 가능
@@ -275,7 +280,7 @@ public class Ex01_String {
 		}else {
 			System.out.println("빈 문자열이 아니다.");
 		}
-		
+		System.out.println(str.isBlank());
 	}
 	
 	public static void format() {
@@ -313,7 +318,11 @@ public class Ex01_String {
 		String params = url.substring(url.indexOf("?") + 1);
 		System.out.println(params);
 		
-		
+		String name = "유재현입니다.";
+		String reName = name.substring(0,name.indexOf("현")); // 유재
+		System.out.println(reName);
+		String last = name.substring(name.indexOf("현"), name.lastIndexOf(".")); // 현입니다 (.는 빠짐)
+		System.out.println(last);
 		
 	}
 	
@@ -339,7 +348,7 @@ public class Ex01_String {
 	}
 	
 	public static void main(String[] args) {
-		format ();
+		ex02 ();
 		
 	}
 
