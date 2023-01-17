@@ -1,6 +1,6 @@
 package ex01_String;
 
-public class MainClass {
+public class Ex01_String {
 
 	public static void literal() {
 		
@@ -177,7 +177,7 @@ public class MainClass {
 		// endsWith
 		// 문자열이 지정된 정규식 패턴(Regular Expression)으로 끝나면 true 반환
 		
-		//matches
+		// matches
 		// 문자열이 지정된 정규식 패턴(Regular Expression)을 포함하면 true 반환
 		
 		String name = "민경태";
@@ -300,7 +300,7 @@ public class MainClass {
 		System.out.println(String.format("%-10d", number)); // %10d : 10자리로 표시하시오.숫자는 왼쪽에 표시하시오
 		System.out.println(String.format("%5s", str)); // %5s : 
 		System.out.println(String.format("%-5s", str)); // %-5s : 
-		
+		 
 	}
 	
 	public static void ex01() {
