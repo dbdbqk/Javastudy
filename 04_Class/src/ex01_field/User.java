@@ -10,7 +10,7 @@ public class User {
 	
 	String id;		// null
 	String pw;		// null
-	int point;		// 0
+	int point;		// 0 
 	boolean isVip;	// false
 	Address addr;	// null
 	
