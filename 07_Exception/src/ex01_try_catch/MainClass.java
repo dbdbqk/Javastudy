@@ -1,5 +1,6 @@
 package ex01_try_catch;
 
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class MainClass {
@@ -29,7 +30,7 @@ public class MainClass {
 	public static void ex02() {
 		try {
 			
-		String input = "1,2,3, ,4,5";
+		String input = "1,2,3,,4,5";
 		String[] numbers = input.split(",");
 		int[] iNumbers = new int[numbers.length];
 		
@@ -64,10 +65,25 @@ public class MainClass {
 		
 		}
 	
+	public static void ex04() {
+		FileReader fr = null;
+		try {
+		fr = new FileReader("sample.txt");
+		} catch(Exception e) {
+			System.out.println("예외가 발생하였다.");
+		} finally {
+			try {
+				fr.close();
+			}catch(Exception e) {
+				
+			}
+		}
+		
+	}
 	
 
 	public static void main(String[] args) {
-		ex03();
+		ex04();
 		
 		
 		

@@ -41,18 +41,21 @@ public class MainClass {
 	// 총 몇 번만에 종료되었는지 그 횟수를 마지막에 출력한다.
 	public static void ex03() {
 		Scanner sc = new Scanner(System.in);
+		String exit = sc.next();
 		int count = 0;
-		String done = "종료";
-		while(true) {
-			String exit = sc.next();
-			if(exit != done) {
-			++count;
-			continue;
-		   }
+		String done = exit;
+		System.out.println(done == "종료" );
+	/*	while("종료" != exit) {
+		if("종료" == exit) {
 			System.out.println(count);
 			break;
-			
 		}
+		++count;
+		}
+		*/	   
+			
+		
+		
 	}
 		
 		
