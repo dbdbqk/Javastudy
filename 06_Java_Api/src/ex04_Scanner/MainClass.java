@@ -17,8 +17,8 @@ public class MainClass {
 				2)	long	: nextLong()
 				3)	double	: nextDouble()
 				4)	String
-					(1) next()		: 공백 포함 불가능
-					(2) nextLine()	: 공백 포함 가능
+					(1) next()		: 공백 포함 불가능 , 공백이 들어가면 입력이 끝났다 판단
+					(2) nextLine()	: 공백 포함 가능, 줄바꿈이 입력의 끝이라 판단
 		*/
 		
 		/*

@@ -21,7 +21,7 @@ public class Gun {
 			throw new GunException("총알 부족", "A-2");
 		}
 		bullet --;
-		System.out.println("빵! " + bullet + "발 남았음");
+		System.out.println("빵! " + bullet + "남음");
 	}
 
 	public int getBullet() {

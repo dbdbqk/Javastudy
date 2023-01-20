@@ -9,7 +9,7 @@ public class MainClass {
 		me.addToCart(new Meat(1, "소고기", 5000));
 		me.addToCart(new Pizza(2, "고구마피자", 3000));
 		me.addToCart(new Noodle(3, "누들면", 2000));
-		me.addToCart(new Noodle(3, "누들면", 2000));
+		me.deleteFromCart(2);
 		
 		String receipt = me.buy();
 		System.out.println(receipt);

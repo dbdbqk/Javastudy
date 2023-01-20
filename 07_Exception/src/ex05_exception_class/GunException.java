@@ -10,7 +10,7 @@ public class GunException extends Exception  {
 
 	private static final long serialVersionUID = 3700059434730916901L;
 
-	private String exceptionCode = null;
+	private String exceptionCode;
 	
 	public GunException(String message, String exceptionCode) {
 		super(message);

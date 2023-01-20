@@ -9,26 +9,31 @@ public class MainClass {
 	// 가위바위보 >>> 가위
 	// 당신은 가위, 컴퓨터는 보, 이겼습니다.
 	// Hint : 가위는 0, 바위는 1, 보는 2로 처리한다.
-	public static void ex01() {
+	public static void ex01() { // 완료 
 		String[] me = {"가위", "바위", "보"};
 		String[] com = {"가위", "바위", "보"};
 		int a = 0;
 		int b = 0;
-		a = (int)(Math.random() * 3);
+		System.out.println("가위바위보 >>> ");
+		Scanner sc = new Scanner(System.in);
 		b = (int)(Math.random() * 3);
-		if(a > b) {
-			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 이겼습니다.");
-		}else if(a == b) {
-			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 비겼습니다.");
-		}else {
-			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 졌습니다.");
+		switch (sc.next()) {
+		case "가위": a = 0; break;
+		case "바위": a = 1; break;
+		default: a = 2;
 		}
-		
-		
+		int result = (a - b);
+
+		if(result == -2 || result == 1) {
+			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 이겼습니다.");
+			
+		}else if(result == 2 ||  result == -1) {
+			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 졌습니다.");
+		}else {
+			System.out.println("당신은 " + me[a] + ", 컴퓨터는 " + com[b] + ", 비겼습니다."); 
+		}	
 	}
 		
-		
-	
 	
 	// 문제2. 친구 3명을 저장할 수 있는 배열을 생성하고 임의의 값으로 초기화하시오.
 	// 새로 사귄 친구의 수를 입력 받아서 기존 친구들이 저장된 배열의 길이를 새로 사귄 친구의 수만큼 늘리시오.
@@ -39,24 +44,25 @@ public class MainClass {
 	// 문제3. Scanner 클래스의 next() 메소드를 이용해서 사용자로부터 문자열을 계속 입력 받는다.
 	// 사용자가 "종료" 문자열을 입력하면 더 이상 입력 받지 않는다.
 	// 총 몇 번만에 종료되었는지 그 횟수를 마지막에 출력한다.
-	public static void ex03() {
-		Scanner sc = new Scanner(System.in);
-		String exit = sc.next();
+	
+	
+	public static void ex03() { 
 		int count = 0;
-		String done = exit;
-		System.out.println(done == "종료" );
-	/*	while("종료" != exit) {
-		if("종료" == exit) {
+		String exit = "";
+		Scanner sc = new Scanner(System.in);
+		
+		while(!exit.equals("종료")) {
+				exit = sc.next();
+				count++;
+			}
+			
 			System.out.println(count);
-			break;
+			sc.close();		
 		}
-		++count;
-		}
-		*/	   
 			
 		
 		
-	}
+	
 		
 		
 
