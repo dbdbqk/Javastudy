@@ -43,7 +43,7 @@ public class ParkingLot {
 		String number = sc.next(); 
 		// String carNo = sc.next();   // 문제풀이
 		for(int i = 0; i < idx; i++){
-			// Car car = cars[i]; <-- 이걸 빼먹음
+			// Car car = cars[i]; <-- 이걸 빼먹음 
 				if(number.equals(cars[i].getCarNo())) {
 					System.out.println("차량번호 " + cars[i].getCarNo() + " 차량이 삭제되었습니다.");
 					cars[i] = cars[--idx];   // 여기서 cars[i] = cars[idx - 1];
