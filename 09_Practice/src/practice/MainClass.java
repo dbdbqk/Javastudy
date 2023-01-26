@@ -138,7 +138,7 @@ public class MainClass {
 	}
 	
 	// 문제5. 예외가 발생한 경우 예외 메시지와 예외 발생시간을 저장한 C:\storage\log.txt
-	// 2023-01-26ㅍ
+	// 2023-01-26 
 	public static void ex05() {
 	
 		try{
@@ -160,6 +160,7 @@ public class MainClass {
 		System.out.println(number1 + "*" + number2 + "=" + mul);
 		System.out.println(number1 + "/" + number2 + "=" + div);
 		sc.close();
+		
 		}catch(Exception e) {
 			// 날짜
 			LocalDateTime now = LocalDateTime.now();
