@@ -115,13 +115,13 @@ public class JSONMainClass {
 		JSONArray products = new JSONArray(str);
 		
 		// 1. 일반 for문
-		for(int i = 0; i < products.length(); i++) {
+		/*for(int i = 0; i < products.length(); i++) {
 			JSONObject obj = products.getJSONObject(i);
 			String model = obj.getString("model");
 			String maker = obj.getString("maker");
 			int price = obj.getInt("price");
 			System.out.println(model + "," + maker + "," + price);
-		}
+		}*/
 		
 		// 2. 향상 for 문
 		for(Object obj : products) { // String 형식 향상포문은 Object타입으로 객체 저장 후 JSONObject 타입으로 캐스팅 해야 한다.
@@ -130,8 +130,9 @@ public class JSONMainClass {
 			String maker = product.getString("maker");
 			int price = product.getInt("price");
 			System.out.println(model + "," + maker + "," + price);
+			System.out.println();
+			System.out.println("1");
 		}
-		
 		
 	}
 	
@@ -150,7 +151,7 @@ public class JSONMainClass {
 		Map<String, Object> product3 = new HashMap<String, Object>();
 		product3.put("model", "TV");
 		product3.put("maker", "삼성");
-		product3.put("price", 300);
+		product3.put("`price", 300);
 
 		
 		List<Map<String, Object>> products = Arrays.asList(product1, product2, product3);
@@ -170,6 +171,7 @@ public class JSONMainClass {
 		}
 				
 	}
+	
 	
 	
 	public static void main(String[] args) {
