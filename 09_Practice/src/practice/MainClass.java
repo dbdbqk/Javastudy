@@ -222,29 +222,35 @@ public class MainClass {
 		}
 		File file2 = new File(dir, "diary.txt");
 		String line = null;
-		StringBuilder sb = null;
-		List<String> list = new ArrayList<String>();
-		long nanoTime1 = System.nanoTime();
-		try(BufferedReader br = new BufferedReader(new FileReader(file))){
-			sb = new StringBuilder();
+		
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
+		long startTime = 0;
+		long doneTime = 0;
+		try {
+			startTime = System.currentTimeMillis();
+			br = new BufferedReader(new FileReader(file));
+			bw = new BufferedWriter(new FileWriter(file2));
 			while((line = br.readLine()) != null) {
-				list.add(sb.append(line).toString());
-			}
-			try(PrintWriter out = new PrintWriter(file2)){
-				for(int i = 0; i < list.size(); i++)
-				out.write(list.get(i).toString());
-			}catch(IOException e) {
+				bw.write(line);
+				bw.newLine();
+			}doneTime = System.currentTimeMillis();
+		}catch(IOException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(br != null) {br.close();}
+					if(bw != null) {bw.close();}
+				}
+			catch(IOException e) {
 				e.printStackTrace();
 			}
-			
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-		if(file.exists()) {
-			file.delete();
-		}
-		long nanoTime2 = System.nanoTime();
-		System.out.println("작업수행시간 : " + (nanoTime2 - nanoTime1) + "ns");
+					}
+			if(file.length() == file2.length()) {	//	복사 성공 삭제 (데이터의 크기 비교)
+				file.deleteOnExit();
+			}
+			System.out.println("이동에 걸린 시간" + (doneTime - startTime) + "밀리초");
 		}
 		
 		
@@ -280,36 +286,11 @@ public class MainClass {
 			
 		}
 	
-		// 	문제8. 키보드로 하나의 문장을 입력 받은 뒤 C:\storage\ex08.txt 파일에 출력하시오
-		//	Scanner와 DataOutputStream을 사용하시오
-		public static void ex08() {
-			DataOutputStream dos = null;
-			Scanner sc = new Scanner(System.in);
-			try {
-				dos = new DataOutputStream(new FileOutputStream(new File("C:" + File.separator + "storage", "ex08.txt")));
-				System.out.print("문장을 입력 하시오 >>> ");
-				String text = sc.nextLine();
-				dos.writeUTF(text);
-				System.out.println(text + "가 ex08.txt에 저장 되었습니다");
-				sc.close();
-			}catch(IOException e) {
-				e.printStackTrace();
-			}finally {
-				try {
-					if(dos != null) {
-						dos.close();
-					}
-				}catch(IOException e) {
-					e.printStackTrace();
-				}
-			}
-			
-		}
 		
-		//	문제9. C:\GDJ\installer\eclipse-jee-2021-03-R-win32-x86_64.zip 파일을
+		//	문제8. C:\GDJ\installer\eclipse-jee-2021-03-R-win32-x86_64.zip 파일을
 		//	C:\storage\eclipse.zip으로 복사하시오.
 		
-		public static void ex09() {	//	복사 프로그램
+		public static void ex08() {	//	복사 프로그램
 			File to = new File("C:" + File.separator + "storage", "eclipse.zip");
 			File from = new File("C:" + File.separator + "GDJ61" + File.separator + "installer", "eclipse-jee-2021-03-R-win32-x86_64.zip");
 			
