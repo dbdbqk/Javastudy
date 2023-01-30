@@ -1,9 +1,19 @@
 package practice;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -13,6 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
 
 public class MainClass {
 
@@ -201,8 +212,141 @@ public class MainClass {
 	
 	
 	
+	// 문제6. C:\storage\diary.txt 파일을 C:\diary.txt 파일로 이동하시오.
+	// 이동에 소요된 시간을 출력하시오.
+	public static void ex06() {
+		File file = new File("C:" + File.separator + "storage", "diary.txt");
+		File dir = new File("C:" + File.separator + "storage2");
+		if(dir.exists() == false) {
+			dir.mkdirs();
+		}
+		File file2 = new File(dir, "diary.txt");
+		String line = null;
+		StringBuilder sb = null;
+		List<String> list = new ArrayList<String>();
+		long nanoTime1 = System.nanoTime();
+		try(BufferedReader br = new BufferedReader(new FileReader(file))){
+			sb = new StringBuilder();
+			while((line = br.readLine()) != null) {
+				list.add(sb.append(line).toString());
+			}
+			try(PrintWriter out = new PrintWriter(file2)){
+				for(int i = 0; i < list.size(); i++)
+				out.write(list.get(i).toString());
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		if(file.exists()) {
+			file.delete();
+		}
+		long nanoTime2 = System.nanoTime();
+		System.out.println("작업수행시간 : " + (nanoTime2 - nanoTime1) + "ns");
+		}
+		
+		
+	
+		// 	문제7. sysout.in은 키보드로부터 바이트 데이터를 입력 받는 InputStream이다.
+		//	System.in으로부터 문장 1개를 입력 받아서 출력 하시오.
+		// Scanner 대신 BufferedReader를 사용하시오.
+			
+		public static void ex07() {
+
+			BufferedReader br = null;
+			
+			try {
+				
+				br = new BufferedReader(new InputStreamReader(System.in));
+				
+				System.out.print("문장입력 >>> ");
+				String sentence = br.readLine();
+				
+				System.out.println("입력된 문장 : " + sentence);
+			}catch(IOException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(br != null) {
+						br.close();
+					}
+				}catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+	
+		// 	문제8. 키보드로 하나의 문장을 입력 받은 뒤 C:\storage\ex08.txt 파일에 출력하시오
+		//	Scanner와 DataOutputStream을 사용하시오
+		public static void ex08() {
+			DataOutputStream dos = null;
+			Scanner sc = new Scanner(System.in);
+			try {
+				dos = new DataOutputStream(new FileOutputStream(new File("C:" + File.separator + "storage", "ex08.txt")));
+				System.out.print("문장을 입력 하시오 >>> ");
+				String text = sc.nextLine();
+				dos.writeUTF(text);
+				System.out.println(text + "가 ex08.txt에 저장 되었습니다");
+				sc.close();
+			}catch(IOException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(dos != null) {
+						dos.close();
+					}
+				}catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		
+		//	문제9. C:\GDJ\installer\eclipse-jee-2021-03-R-win32-x86_64.zip 파일을
+		//	C:\storage\eclipse.zip으로 복사하시오.
+		
+		public static void ex09() {	//	복사 프로그램
+			File to = new File("C:" + File.separator + "storage", "eclipse.zip");
+			File from = new File("C:" + File.separator + "GDJ61" + File.separator + "installer", "eclipse-jee-2021-03-R-win32-x86_64.zip");
+			
+			BufferedInputStream bin = null;
+			BufferedOutputStream bout = null;
+			
+			
+			try {
+				bin = new BufferedInputStream(new FileInputStream(from));
+				bout = new BufferedOutputStream(new FileOutputStream(to));
+				
+				byte[] b = new byte[1024];	//	1킬로바이트
+				int readByte = 0;
+				while((readByte = bin.read(b)) != -1) {
+					bout.write(b, 0, readByte);
+				}
+				
+				System.out.println("복사 완료 되었습니다,");
+				
+			} catch(IOException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					if(bout != null) { bout.close();}
+					if(bin != null) { bin.close();}
+					
+				}catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			
+		}
+		
+	
 	public static void main(String[] args) {
-		ex05();
+		ex08();
 	}
 
 }

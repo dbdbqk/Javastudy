@@ -1,5 +1,6 @@
 package ex03_Reader;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -72,13 +73,13 @@ public class MainClass {
 				sb.append(cbuf, 0, readCount); // 인덱스 0부터 readCount개 글자를 sb에 추가하시오.
 				
 				// ex02.txt 읽는 과정
-				//루프	readCount	cbuf
-				//1		5			a b c d e
-				//2		2			f g
+				// 루프	readCount	cbuf
+				// 1		5			a b c d e
+				// 2		2			f g
 				
-				//for(int i = 0; i < readCount; i++) {
-				//System.out.print(cbuf[i]);
-				//}
+				// for(int i = 0; i < readCount; i++) {
+				// System.out.print(cbuf[i]);
+				// }
 			}
 			System.out.println(sb);
 			
@@ -96,11 +97,52 @@ public class MainClass {
 		
 	}
 	
+	public static void ex03() {
+		
+		/*
+			BufferedReader의 장점
+			1. 속도가 빠르다.
+			2.readLine 메소드를 사용할 수 있다.
+		*/
+		File dir = new File("C:" + File.separator + "storage");
+		if(dir.exists()) {
+			dir.mkdirs();
+		}
+		File file = new File(dir, "ex03.txt");
+		
+		BufferedReader br = null;
+		
+		try {
+			br = new BufferedReader(new FileReader(file));
+			
+			String line = null;
+			StringBuilder sb = new StringBuilder();
+			while((line = br.readLine()) != null) {
+				sb.append(line);
+			}
+			System.out.println(sb.toString());
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(br != null) {
+					br.close();
+				}
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+	
+	
 	
 	
 	
 	public static void main(String[] args) {
-		ex02();
+		ex03();
 		
 		
 	}
