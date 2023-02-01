@@ -1,5 +1,7 @@
 package practice03_Bakery;
 
+import java.util.Map;
+
 // 빵을 구매하는 구매자
 
 public class Customer {
@@ -19,12 +21,12 @@ public class Customer {
 	public void buy(Bakery bakery, int money) {
 		
 		// bakery에 money를 전달하고 빵과 잔돈을 받는다.
-		BreadAndChange bnc = bakery.sell(money);
+		Map<String, Object> bnc = bakery.sell(money);
 		
 		// customer 처리(빵은 늘었고, 돈은 줄었다.)
 		this.money -= money;  // 돈을 냈다.
-		this.breadCount += bnc.getBreadCount();  // 빵을 받았다.
-		this.money += bnc.getChange();  // 잔돈을 받았다.
+		this.breadCount += (int)bnc.get("sellBread");  // 빵을 받았다.
+		this.money += (int)bnc.get("change");  // 잔돈을 받았다.
 		
 	}
 	

@@ -1,5 +1,8 @@
 package practice03_Bakery;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // 한 가지 종류의 빵만 판매하는 빵집
 
 public class Bakery {
@@ -18,7 +21,7 @@ public class Bakery {
 
 	// 판매 메소드
 	// 구매자에게 돈을 받는다. 구매자에게 빵과 잔돈을 준다.
-	public BreadAndChange sell(int money) {
+	public Map<String, Object> sell(int money) {
 		
 		// 판매할 빵의 개수
 		int sellBread = money / breadPrice;
@@ -27,7 +30,7 @@ public class Bakery {
 		int change = money % breadPrice;
 		
 		// 고객에게 돌려 줄 BreadAndChange 객체 생성
-		BreadAndChange bnc = new BreadAndChange(sellBread, change);
+		Map<String, Object> bnc = new HashMap<String, Object>();
 		
 		// Bakery 판매처리(빵은 줄었고, 돈은 늘었다.)
 		breadCount -= sellBread;
