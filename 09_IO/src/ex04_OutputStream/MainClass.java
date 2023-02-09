@@ -179,7 +179,7 @@ public class MainClass {
 			Person person = new Person();
 			person.setName("제임스");
 			person.setAge(40);
-			person.setHeight(170.5);
+			person.setHeight(170.5);	
 			person.setAlive(false);
 		
 			// 출력
